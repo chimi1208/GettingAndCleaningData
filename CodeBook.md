@@ -1,6 +1,6 @@
-<h> Codebook for the Course Project </h>
+<h1> Codebook for the Course Project </h1>
 
-<h1> Data Source </h1>
+<h2> Data Source </h2>
 RAW Data provided from the UCI HAR data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
