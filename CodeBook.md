@@ -4,7 +4,7 @@
 RAW Data provided from the UCI HAR data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
-Analysis Process and Rationale:
+<h2>Analysis Process and Rationale:</h2>
 1. Read in and understand the data
 Data set was divided into test and train datasets.  
 The 12 files are as below (note the test dataset has the same files with less observations 2,947-test vs. 7,352-train):
@@ -21,11 +21,13 @@ The 12 files are as below (note the test dataset has the same files with less ob
  11. "train/X_train.txt"                            
  12. "train/y_train.txt" 
 
+<h2> Scope included</h2>
 Per the Readme provided by UCI HAR these were the relevant files are below.  For purposes of this analysis, these are the only files considered:
 1. "train/subject_train.txt": subjects
 2. "train/X_train.txt": Data Set
 3. "train/y_train.txt" Data labels
 
+<h2>Relationships between files</h2>
 These datsets and the other provided datasets were read into tables for assessment to understand how they related to each other:
 * Subject files contained the subjects for each dataset
 * The test data contained 2,947 obervations across 561 variables
@@ -34,6 +36,7 @@ These datsets and the other provided datasets were read into tables for assessme
 * The activites were labeled 1-6.
 * Activity labels 1-6 were defined in the Activity_labels text file.
 
+<h2>Transformations</h2>
 The columns within the test and training datasets were then updated to the names provided in the features file.
 
 The test and training datasets were then merged into a consolidated dataset of 10,299 observations (2,947-test + 7,352-training).
@@ -48,4 +51,7 @@ For clarity, certain columns were renamed as follows:
 3. Variables that contained "Mag" were renamed with the substution "Magnitude"
 4. Variables that contained "Acc" were renamed with the substution "Acceleration"
 
+<h2>Analysis</h2>
+The analysis dataset was then created from the subsetted dataset by calculating the average of each column by subject and activity (i.e. subject 1 / walking, subject 2 / walking, / subject 1 / laying, etc.)
 
+The result was one row for each subject / activity combination with each column representing the mean for the particular measurement. Note that it is understood that the calculations (e.g. mean of a standard deviation) is not typically a useful data point for analysis, but these were processed as requested in the instruction set.
