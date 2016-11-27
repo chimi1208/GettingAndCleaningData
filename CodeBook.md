@@ -6,20 +6,26 @@ RAW Data provided from the UCI HAR data: https://d396qusza40orc.cloudfront.net/g
 Analysis Process and Rationale:
 1. Read in and understand the data
 Data set was divided into test and train datasets.  
-The files are as below (note the test dataset has the same files with less observations 2,947-test vs. 7,352-train):
- "train/Inertial Signals/body_acc_x_train.txt"  "train/Inertial Signals/body_acc_y_train.txt"  "train/Inertial Signals/body_acc_z_train.txt" 
- "train/Inertial Signals/body_gyro_x_train.txt" "train/Inertial Signals/body_gyro_y_train.txt" "train/Inertial Signals/body_gyro_z_train.txt"
- "train/Inertial Signals/total_acc_x_train.txt" "train/Inertial Signals/total_acc_y_train.txt" "train/Inertial Signals/total_acc_z_train.txt"
- "train/subject_train.txt"                      "train/X_train.txt"                            "train/y_train.txt" 
+The 12 files are as below (note the test dataset has the same files with less observations 2,947-test vs. 7,352-train):
+ "train/Inertial Signals/body_acc_x_train.txt"  
+ "train/Inertial Signals/body_acc_y_train.txt"  
+ "train/Inertial Signals/body_acc_z_train.txt" 
+ "train/Inertial Signals/body_gyro_x_train.txt" 
+ "train/Inertial Signals/body_gyro_y_train.txt" 
+ "train/Inertial Signals/body_gyro_z_train.txt"
+ "train/Inertial Signals/total_acc_x_train.txt" 
+ "train/Inertial Signals/total_acc_y_train.txt" 
+ "train/Inertial Signals/total_acc_z_train.txt"
+ "train/subject_train.txt"                      
+ "train/X_train.txt"                            
+ "train/y_train.txt" 
 
-For purposes of this analysis the only files consdered were:
+Per the Readme provided by UCI HAR these were the relevant files are below.  For purposes of this analysis, these are the only files considered:
 1. "train/subject_train.txt": subjects
 2. "train/X_train.txt": Data Set
 3. "train/y_train.txt" Data labels
 
-Per the Readme provided by UCI HAR these were the relevant files.
-
-Theese data and the other provided datasets were read into tables for assessment to understand how they related to each other:
+These datsets and the other provided datasets were read into tables for assessment to understand how they related to each other:
 Subject files contained the subjects for each dataset
 The test data contained 2,947 obervations across 561 variables
 The training dataset contained 7,352 across 561 variables. 
@@ -35,4 +41,10 @@ For purposes of the project, the columns that calculated mean and standard devia
 any column that had "mean" or "std" in its column name.  For purposes of this project, these search terms could be anywhere withing 
 the column name.
 
-For clarity, certain columns were renamed .......
+For clarity, certain columns were renamed as follows:
+1. Variables that started with "t" were renamed with the prefix "Time"
+2. Variables that started with "f" were renamed with the prefix "Frequency"
+3. Variables that contained "Mag" were renamed with the substution "Magnitude"
+4. Variables that contained "Acc" were renamed with the substution "Acceleration"
+
+
